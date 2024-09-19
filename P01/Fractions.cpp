@@ -52,8 +52,15 @@ public:
     
     // Parameterized constructor
     Fraction::Fraction(int n, int d) {
+        if (d ==0){
+            cout << "Invalid denominator\n";
+
+        }
+        else{
         den = d;
         num = n;
+        }
+       
     }
 
     // Overloaded stream insertion operator for output
@@ -124,48 +131,48 @@ public:
 
 int main(int argc, char *argv[]) 
 {
-
     int n, n2, d, d2;
-    string ff1,ff2,op;
+    string ff1, ff2, op;
 
-    while(cin >> ff1 >> op >> ff2)
+    // Read input in the format of two fractions and an operator
+    while (cin >> ff1 >> op >> ff2)
     {
-        n = ff1[0] -'0';
-        d = ff1[2] -'0';
-        n2 = ff2[0] -'0';
-        d2 = ff2[2] - '0';
+        // Extract the numerator and denominator from the string input
+        n = ff1[0] - '0';   // First fraction numerator
+        d = ff1[2] - '0';   // First fraction denominator
+        n2 = ff2[0] - '0';  // Second fraction numerator
+        d2 = ff2[2] - '0';  // Second fraction denominator
 
-        Fraction b(n,d);
-        Fraction b2(n2,d2);
+        // Create Fraction objects using parsed values
+        Fraction b(n, d);
+        Fraction b2(n2, d2);
 
-        if(op == "==")
+        // Perform operations based on the specified operator
+        if (op == "==")
         {
-            bool equal = b == b2;
-            cout << b << " ==" << b2 << " " <<equal << endl;
+            bool equal;
+            equal = b == b2;  // Check for equality
+            cout << b << " ==" << b2 << " " << equal << endl;
         }
-
         else if (op == "-")
         {
-            cout << b << " - " << b2 << " " << b - b2 << endl;
+            cout << b << " - " << b2 << " = " << (b - b2) << endl;  // Subtraction
         }
-
         else if (op == "+")
         {
-            cout << b << " + " << b2 << " " << b + b2 << endl;
+            cout << b << " + " << b2 << " = " << (b + b2) << endl;  // Addition
         }
-
         else if (op == "*")
         {
-            cout << b << " * " << b2 << " " << b * b2 << endl;
+            cout << b << " * " << b2 << " = " << (b * b2) << endl;  // Multiplication
         }
-
-        else if(op == "/")
+        else if (op == "/")
         {
-            cout << b << " / " << b2 << " " <<b / b2 << endl;
+            cout << b << " / " << b2 << " = " << (b / b2) << endl;  // Division
         }
         else
         {
-            cout << "Invalid input.\n";
+            cout << "Invalid input." << endl;  // Handle invalid input
         }
     }
     
