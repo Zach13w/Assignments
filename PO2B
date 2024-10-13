@@ -1,0 +1,147 @@
+Chat(wishful)
+Data: 
+Username
+Message
+Actions:
+displaychat(string): takes in a string and displays it to users 
+Relationships:
+Has a username
+Is a member of the game class
+Coins(possible)
+Data:
+Coincount 
+Actions:
+Setcoins(): increases or decreases the coin count
+Showcoins(): displays the number of coins the player has
+Relationships:
+Is a member of player
+First name(possible)
+Data:
+Fname
+Actions:
+SetFname(string): sets player's first name
+GetFname(): returns player's first name
+Relationships:
+Is a part of the player class
+High score(possible)
+Data:
+Score 
+Hscore
+Actions:
+GetHscore(): returns player's high score
+SetHscore(): takes in a score, then checks if it is higher than the current Hscore, and if it      changes Hscore
+Relationships:
+Is part of player
+Last name(possible)
+Data:
+Lname
+Actions:
+SetLname(string): sets player's last name
+GetLname(): returns player's last name
+Relationships:
+Is a part of the player class
+
+
+Leaderboard(wishful)
+Data:
+UserScores: A map of usernames and Highscores
+Actions:
+SortScores(): Traverses map and sorts it in by high scores, highest to lowest
+DisplayLeaderboard(): Displays leaderboard with player names and score 
+Relationships:
+Has a username and high score
+Is a part of game class
+Levels(necessary)
+Data:
+Tiles: array of tiles that will make up the level
+Actions:
+SetTiles(): sets the location and type of tiles
+Relationships:
+Is a part of game class
+Messaging(wishful)
+Data:
+Messenger
+Receiver 
+Message
+Actions:
+SetMessanger(): sets the name of the messenger 
+SetReceiver(): sets the receiver of the message
+SendMessage(): takes in a string from the messenger and sends it to the receiver
+Relationships:
+Has a username from messenger and receiver
+Is a part of player class
+Player stats(necessary)
+Data:
+FirstName
+LastName
+Username
+User-ID
+HighScore
+Streak
+Coins 
+Actions:
+SetName(): sets first name, last name, and username
+SetID(): sets user-ID
+SetHighScore: checks if score is greater than high score and changes the score if it is
+SetStreak(): adds to streak if the player won and sets it to 0 if the player lost
+SetCoins(): adds or subtracts from coin count
+Relationships:
+Has FirstName, LastName, Username, User-ID, HighScore, Streak, and Coins 
+Is a part of game class
+Score(necessary)
+Data:
+Score
+Actions:
+SetScore(): calculates score from game
+GetScore(): returns score
+Relationships:
+Is a part of game class
+Streak(possible)
+Data:
+StreakCount
+Actions:
+SetStreak(): adds to streak if the player won and sets it to 0 if the player lost
+Relationships:
+Is a part of player class
+Team stats(wishful)
+Data:
+HighScore
+TeamMembers: an array of players
+Winner
+TeamName
+streak
+Actions:
+SetHighScore(): checks if score is greater than high score and changes the score if it is
+SetTeamMembers(): adds players to array
+SetTeamName(): sets team name
+SetStreak(): adds to streak if the player won and sets it to 0 if the team lost
+Relationships:
+Teams(wishful)
+Data:
+Winner
+Teams: an array of participating teams
+Score 
+Actions:
+SetWinner(): calculates score from game and then determins winner
+SetTeams(): adds teams to array
+Relationships:
+Is a member of game class
+Has winner, team, and score
+User-id(necessary)
+Data:
+IDnumber
+Actions:
+SetID(): sets user-ID
+GetID(): gets user-ID 
+Relationships:
+Is a part of the player class
+Winner(necessary)
+Data:
+Score
+Players: an array of players
+Winner 
+Actions:
+GetWinner(): uses the score to calculate the winner, then returns a winner
+Relationships:
+Is a part of the game class
+Has a score and an array of player stats
